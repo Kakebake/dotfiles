@@ -15,7 +15,7 @@ alias unstage='git reset --soft HEAD^'
 
 alias pack='yarn start -- --reset-cache'
 
-alias profile='vim ~/.bash_profile'
+alias profile='vim ~/dotfiles/.bash_profile'
 alias restart='. ~/.bash_profile'
 alias adbr='adb reverse tcp:8081 tcp:8081'
 alias gradlew='./gradlew installStbdevDebug' 
