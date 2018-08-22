@@ -61,6 +61,9 @@ alias j="jobs"
 
 alias psq='postgres -D /Users/ADM/psql/data'
 
+# zipp [archive name] [folder]
+alias zipp='zip -er'
+
 . ~/git-completion.bash
 . ~/kubectl-completion.bash
 
