@@ -1,7 +1,6 @@
 eval "$(pyenv init -)"
 alias gs='git status'
 alias gp='git pull'
-alias gpu='git push --set-upstream origin `__git_ps1`'
 alias gb='git branch'
 alias gc='git checkout'
 alias gcb='git checkout -b'
@@ -13,21 +12,36 @@ alias gl='git log'
 alias gr='git reset'
 alias unstage='git reset --soft HEAD^'
 
-alias pack='yarn start -- --reset-cache'
+alias kc='kubectl config'
+alias k='kubectl'
+alias ks='kubectl -n kube-system'
+alias kl='kubectl -n kube-lego'
+
+alias pack='yarn start --reset-cache'
 
 alias profile='vim ~/dotfiles/.bash_profile'
 alias restart='. ~/.bash_profile'
 alias adbr='adb reverse tcp:8081 tcp:8081'
+alias adbd='adb shell input keyevent 82'
 alias gradlew='./gradlew installStbdevDebug' 
 alias gradlewd='./gradlew installDkvDebug'
 
+alias run-motione-android='react-native run-android --variant=motioneDebug'
+alias run-motione-ios='react-native run-ios'
+
 alias vpn='sudo openconnect --user=admin-zep-ear --csd-wrapper=./csd-wrapper.sh ssl.storebrand.no/partner'
+
+alias k='kubectl'
+alias ks='kubectl -n kube-system'
 
 alias up='docker-compose up'
 alias down='docker-compose down'
 alias build='docker-compose build'
 alias logs='docker-compose logs'
 alias exec='docker exec -ti'
+
+# Connect to databases
+alias psq-dev-points="psql postgres://motione:AWpqFEHeMqxtbHQZfrtajxURV@motione-dev.cft1pd2jcxaj.eu-west-1.rds.amazonaws.com/motione-dev-points-v2?sslmode=disable"
 
 # Server names with user name
 alias stb5="ssh admin-zep-ear@139.120.123.142"
@@ -64,10 +78,16 @@ alias psq='postgres -D /Users/ADM/psql/data'
 # zipp [archive name] [folder]
 alias zipp='zip -er'
 
+alias ngrok='~/ngrok'
+
+alias gotest='go test $(go list ./... | grep -v /vendor/) -p 1'
+
 . ~/git-completion.bash
 . ~/kubectl-completion.bash
 
 export PATH="$HOME/.fastlane/bin:$PATH"
+export PATH="$PATH:/Users/ADM/protoc"
+export PATH="/usr/local/opt/node@8/bin:$PATH"
 
 export GOPATH="/Users/ADM/go"
 export LC_ALL=en_US.UTF-8
